@@ -5,9 +5,6 @@
 <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Article</h3><br/>
-                <a href="artikel/create" class="btn btn-primary">
-                  Create New Article
-                </a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -22,7 +19,6 @@
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach($articles as $article)
                     <tr>
                       <td>{{$article->id}}</td>
                       <td>{{$article->judul}}</td>
@@ -30,7 +26,6 @@
                       <td>{{$article->slug}}</td>
                       <td>{{$article->tag}}</td>
                     </tr>
-                  @endforeach 
                   </tbody>
                 </table>
               </div>

@@ -28,7 +28,7 @@ class articleController extends Controller
     }
 
     public function show($id){
-        $article = Jawaban::find_by_id($id);
+        $article = ArtikelModel::find_by_id($id);
         // dd($jawaban);
         // return view('pertanyaan', compact('pertanyaans'));
         return view('show', compact('article'));	
