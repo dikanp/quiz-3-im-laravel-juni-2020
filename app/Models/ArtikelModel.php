@@ -32,4 +32,9 @@ class ArtikelModel
         ]);
         return $item;
     }
+
+    public static function destroy($id){
+        $deleted = DB::table('articles')->where('id', $id)->delete();
+        return $deleted;
+    }
 }

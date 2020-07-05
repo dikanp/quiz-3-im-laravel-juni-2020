@@ -17,7 +17,8 @@
                       <th style="width: 5%">Id</th>
                       <th style="width: 25%">Judul</th>
                       <th>Isi</th>
-                      <th style="width: 25%">Action</th>
+                      <th>Slug</th>
+                      <th>Tag</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -26,22 +27,8 @@
                       <td>{{$article->id}}</td>
                       <td>{{$article->judul}}</td>
                       <td>{{$article->isi}}</td>
-                      <td>
-                            <span>
-                                <a href="{{asset('artikel/'.$article->id)}}" class="btn btn-primary btn-sm">
-                                    <i class="fa fa-eye"></i>
-                                </a> &nbsp;
-                                <a href="{{asset('artikel/'.$article->id.'/edit')}}" class="btn btn-warning btn-sm">
-                                    <i class="fa fa-edit"></i>
-                                </a> &nbsp; 
-                                <form action="{{asset('artikel/'.$article->id)}}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button type='submit' class="btn btn-danger btn-sm" 
-                                    onclick="return confirm('Are you sure want to delete this data?');"><i class="fa fa-trash"></i>
-                                </button>
-                            </span>
-                        </td>
+                      <td>{{$article->slug}}</td>
+                      <td>{{$article->tag}}</td>
                     </tr>
                   @endforeach 
                   </tbody>

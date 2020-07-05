@@ -27,6 +27,13 @@ class articleController extends Controller
         return redirect('/artikel');
     }
 
+    public function show($id){
+        $article = Jawaban::find_by_id($id);
+        // dd($jawaban);
+        // return view('pertanyaan', compact('pertanyaans'));
+        return view('show', compact('article'));	
+    }
+
     public function updateForm($id){
         $article = ArtikelModel::find_by_id($id);
         return view('edit', compact('article'));
@@ -36,6 +43,11 @@ class articleController extends Controller
     public function update(Request $request, $id){
         $slug = Str::slug($request->get('judul'));
         $article = ArtikelModel::update($id, $request->all(), $slug, $tag);
+        return redirect('/artikel');
+    }
+
+    public function destroy($id){
+        $deleted = ArtikelModel::destroy($id);
         return redirect('/artikel');
     }
 }

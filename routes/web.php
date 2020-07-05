@@ -12,16 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('layouts/master');
+    return view('welcome');
 });
 
 Route::get('/artikel', 'articleController@index');
 Route::get('/artikel/create', 'articleController@create');
 Route::post('/artikel', 'articleController@save' );
-Route::get('/artikel/{id}', 'articleController@updateForm' );
-Route::get('/artikel/{id}/edit', );
-Route::put('/artikel/{id}', );
-Route::delete('/artikel/{id}', );
+Route::get('/artikel/{id}', 'articleController@show' );
+Route::get('/artikel/{id}/edit', 'articleController@updateForm' );
+Route::put('/artikel/{id}', 'articleController@update' );
+Route::delete('/artikel/{id}', 'articleController@destroy');
 
 Route::get('/items/create', 'ItemController@create'); // menampilkan halaman form
 Route::post('/items', 'ItemController@store'); // menyimpan data
