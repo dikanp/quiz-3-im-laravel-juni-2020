@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Sanbercode
+                <img src="images/ERD.png" alt="Girl in a jacket" width="500" height="600">
                 </div>
 
                 <div class="links">
